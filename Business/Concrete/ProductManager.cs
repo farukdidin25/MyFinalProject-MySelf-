@@ -22,11 +22,9 @@ namespace Business.Concrete
             return _productDal.GetAll();
         }
 
-        public List<Product> GetAllByCategoryId(int categoryId)
+        public List<Product> GetAllByCategoryId(int id)
         {
-            return _productDal.GetAllByCategory(categoryId);
+            return _productDal.GetAll(p=>p.CategoryId== id);
         }
-
-        
     }
 }
