@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.DataAccess
+namespace Core.Utilities.Results
 {
-    public class EntityRepositoryBase<TEntity,TContext>
+    public interface IResult
     {
-
+        bool Success { get; }
+        string Message { get; }
     }
 }

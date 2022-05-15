@@ -1,16 +1,15 @@
 ﻿using Core.DataAccess;
+using DataAccess.Abstract;
 using Entities.Concrete;
-using Entities.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Abstract
+namespace DataAccess.Concrete.EntityFramework
 {
-    public interface IProductDal:IEntityRepository<Product>
+    public class EfOrderDal : EfEntityRepositoryBase<Order, NorthwindContext>, IOrderDal
     {
-        List<ProductDetailDto> GetProductDetails();
     }
 }
