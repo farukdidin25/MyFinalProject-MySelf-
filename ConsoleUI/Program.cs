@@ -16,6 +16,7 @@ static void ProductTest()
     var result = productManager.GetProductDetails();
     if (result.Success==true)
     {
+
         foreach (var product in result.Data)
         {
             Console.WriteLine(product.ProductName + "/" + product.CategoryName);
