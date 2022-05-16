@@ -8,7 +8,8 @@ namespace Core.Utilities.Results
 {
     public class Result : IResult
     {
-        
+        //overloading
+
         public Result(bool success, string message):this(success)
         {
             success = success;
