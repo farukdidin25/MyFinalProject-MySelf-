@@ -12,11 +12,12 @@ namespace Core.Utilities.Results
 
         public Result(bool success, string message):this(success)
         {
-            success = success;
+            this.Success = success;
+            this.Message = message;
         }
         public Result(bool success)
         {
-            success = success;
+            this.Success = success;
         }
 
         public bool Success { get; }

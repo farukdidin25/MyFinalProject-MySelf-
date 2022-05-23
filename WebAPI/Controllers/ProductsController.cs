@@ -10,16 +10,23 @@ namespace WebAPI.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase
-    {//Loosely coupled
+    {
+        //losely coupled
         //naming convention
-        //IoC Container -- Inversion of Control
-        [HttpGet]
+        //IoC  --  Inversion of Control
+        IProductService _productService;
 
-        public string Get()
+        public ProductsController(IProductService productService)
         {
-            IProductService productService = new ProductManager(new EfProductDal());
-            var result = productService.GetAll();
-            return result.Message;
+            _productService = productService;
+        }
+
+        [HttpGet]
+        public List<Product> Get()
+        {
+            
+            var result = _productService.GetAll();
+            return result.Data;
         }
     }
 }
