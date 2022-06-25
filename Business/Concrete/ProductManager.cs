@@ -44,7 +44,7 @@ namespace Business.Concrete
             }
 
             _productDal.Add(product);
-            return new SuccesResult(Messages.ProductAdded);
+            return new SuccessResult(Messages.ProductAdded);
 
         }
         
@@ -82,7 +82,7 @@ namespace Business.Concrete
             {
                 return new ErrorResult(Messages.ProductCountOfCategoryError);
             }
-            return new SuccesResult();
+            return new SuccessResult();
         }
 
 
@@ -93,7 +93,7 @@ namespace Business.Concrete
             {
                 return new ErrorResult(Messages.ProductNameAlreadyExists);
             }
-            return new SuccesResult();
+            return new SuccessResult();
         }
 
         private IResult CheckIfCategoryLimitExceded()
@@ -103,7 +103,7 @@ namespace Business.Concrete
             {
                 return new ErrorResult(Messages.CategoryLimitExceded);
             }
-            return new SuccesResult();
+            return new SuccessResult();
         }
 
     }
